@@ -10,6 +10,15 @@ end
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
   app.name = '<%= name %>'
-  app.version = '0.1'
+  app.version = '0.2'
+  app.short_version = '0.2'
+  # app.icon = '<%= name %>.icns' # add your icon to /resources
   app.identifier = 'com.your-name.<%= name %>'
+  app.entitlements['com.apple.security.app-sandbox'] = true
+  # app.copyright = "Copyright © 2014"
+  # app.deployment_target = "10.9"
+
+  app.release do
+    app.codesign_certificate = "Developer ID Application: Your id name (code)"
+  end
 end
